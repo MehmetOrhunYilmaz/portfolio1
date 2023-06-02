@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Bruno Ace SC", cursive;
+}
+
+.container {
+  background-color: #0d0c1d;
+}
+
+.navigation nav {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navigation nav #nav-left {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  color: #fff4e4;
+  font-size: 1.5rem;
+}
+.navigation nav #nav-right {
+  color: #fff4e4;
+  width: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1rem;
+}
+.navigation nav #nav-right li {
+  cursor: pointer;
+  position: relative;
+  padding: 9px;
+  z-index: 0;
+}
+.navigation nav #nav-right li a {
+  text-decoration: none;
+  color: #fff4e4;
+}
+.navigation nav #nav-right li::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  background: #ffb100;
+  left: 0;
+  bottom: 0;
+  transition: all 0.5s ease-in-out;
+}
+.navigation nav #nav-right li:hover::after {
+  height: 100%;
+  z-index: -1;
+}
+
+.about-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 800px;
+}
+.about-main .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #003844;
+  width: 85%;
+  height: 80px;
+  color: #9fa0c3;
+  font-size: 1rem;
+  text-decoration: underline;
+}
+.about-main .about-text {
+  display: flex;
+  justify-content: center;
+  width: 85%;
+  height: 600px;
+  background-color: #003844;
+  color: #ffb100;
+  text-align: center;
+  font-size: 1.2rem;
+}
+.about-main .about-text p {
+  width: 50%;
+}
+.about-main .about-text a {
+  text-decoration: none;
+  color: #9fa0c3;
+}
+
+@media screen and (max-width: 576px) {
+  .navigation {
+    height: 70px;
+  }
+  nav {
+    flex-direction: column;
+  }
+  .about-main .about-text p {
+    width: 90%;
+  }
+}/*# sourceMappingURL=about.css.map */

@@ -1,0 +1,333 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Bruno Ace SC', cursive;
+}
+
+$mainBackground: #0d0c1d;
+$secondaryColor: #003844;
+$thirdColor: #9fa0c3;
+$forthColor: #fff4e4;
+$fifthColor: #3185fc;
+$sixthColor: #f41915;
+$seventhColor: #ffb100;
+$bodyColor: #1d1f20;
+
+@mixin display($display,$direction,$align){
+    display: $display;
+    flex-direction: $direction;
+    align-items: $align;
+}
+@mixin effect($width, $height, $color, $left, $bottom){
+    width: $width;
+    height: $height;
+    background: $color;
+    left: $left;
+    bottom: $bottom;
+}
+
+
+
+.container{
+    background-color:$mainBackground;
+}
+.navigation{
+    nav{    
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        #nav-left{
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            color: $forthColor;
+            font-size: 1.5rem;
+        }
+        #nav-right{
+            color: $forthColor;
+            width: 30%;
+            display: flex;
+            justify-content: space-evenly;
+            font-size: 1rem;
+            li{
+                cursor: pointer;
+                position: relative;
+                padding: 9px;
+                z-index: 0;
+                a{
+                    text-decoration: none;
+                    color: $forthColor;
+                }
+                &::after{
+                    content: "";
+                    position: absolute;
+                    @include effect(100%,0,$seventhColor,0,0);
+                    transition: all 0.5s ease-in-out;
+                }
+                &:hover::after{
+                    height: 100%;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+}
+
+.entrence{
+    @include display(flex,column,center);
+    height: 1500px;
+    .entrence-header{
+        @include display(flex,column,center);
+        justify-content: space-evenly;
+        width: 85%;
+        height: 40%;
+        background-color: $secondaryColor;
+        .p-top{
+            font-size: 3rem;
+            color: $fifthColor;
+        }
+        .p-name{
+            display: flex;            
+            font-size: 5rem;
+            color: $fifthColor;
+            .name-part{
+                display: flex;
+            }
+            .header-letter{
+                display: flex;
+                align-items: end;
+                height: 90%;
+                cursor: default;
+                &:hover{
+                    color: $sixthColor;
+                    text-shadow: 3px 3px 10px $sixthColor;
+                    align-items: start;              
+                }
+            }
+        }
+        .p-about-me{
+            font-size: 1.8rem;
+        }
+    }
+}
+.about-me{
+    text-align: center;
+    width: 85%;
+    height: 1200px;
+    background-color: #1d1f20;
+    color: $seventhColor;
+    .about-me-text{
+        @include display(flex,column,center);
+        justify-content: space-evenly;
+        height: 50%;
+        h2{
+            animation-name: about;
+            animation-duration: 3s;
+            animation-delay: 0.5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;  
+        }
+        @keyframes about {
+            0% {color: $seventhColor;}
+            50% {color: $sixthColor;}
+            100% {color: $seventhColor;}
+        }
+        h3{
+            color: $thirdColor;
+            height: 40px;
+            width: 100%;
+            border: 1px solid transparent;
+            position: relative;
+            cursor: default;
+            &::after{
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 100%;
+                background-image: url(./images/my-photo-code.jpg);
+                background-repeat: no-repeat;
+                left: 0;
+                top: 0;
+                transition: all 1s ease;
+            }
+            &:hover::after{
+                width: 100%;
+            }
+            &:hover{
+                color: transparent;
+            }
+        }
+    }
+}
+           
+
+
+.about-me-list{
+    display: flex;
+    justify-content: space-evenly;
+    ul{
+        cursor: default;
+        h2{
+            color: $sixthColor;
+        }
+        li{
+            margin-top: 5px;
+            &:hover{
+                color: $sixthColor;
+            }
+        }
+    }
+}
+
+.contact-me{
+    width: 85%;
+    height: 550px;
+    background-color: $bodyColor;
+    .contact-me-text{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        font-size: 2.5rem;
+        color: $sixthColor;
+        cursor: pointer;
+        #cml1{
+            rotate: 100deg;
+            transition: all 0.7s ease;
+        }
+        #cml2{
+            rotate: 50deg;
+            transition: all 0.7s ease;
+        }
+        #cml3{
+            rotate: 140deg;
+            transition: all 0.7s ease;
+        }
+        #cml4{
+            rotate: 300deg;
+            transition: all 0.7s ease;
+        }
+        #cml5{
+            rotate: 75deg;
+            transition: all 0.7s ease;
+        }
+        #cml6{
+            rotate: 155deg;
+            transition: all 0.7s ease;
+        }
+        #cml7{
+            rotate: 240deg;
+            transition: all 0.7s ease;
+        }
+        #cml8{
+            rotate: 100deg;
+            transition: all 0.7s ease;
+        }
+        #cml9{
+            rotate: 310deg;
+            transition: all 0.7s ease;
+        }
+        #cml10{
+            rotate: 35deg;
+            transition: all 0.7s ease;
+        }
+        &:hover #cml1{
+            rotate: 0deg;
+            color: $forthColor;
+        }
+        &:hover #cml2{
+            rotate: 0deg;
+            color: $forthColor;
+        }
+        &:hover #cml3{
+            rotate: 0deg;
+            color: $forthColor;
+        }
+        &:hover #cml4{
+            rotate: 0deg;
+            color: $forthColor;
+        }
+        &:hover #cml5{
+            rotate: 0deg;
+            color: $forthColor;
+        }
+        &:hover #cml6{
+            rotate: 0deg;
+            color: $forthColor;
+        }
+        &:hover #cml7{
+            rotate: 0deg;
+            color: $forthColor;
+        }
+        &:hover #cml8{
+            rotate: 0deg;
+            color: $forthColor;
+        }
+        &:hover #cml9{
+            rotate: 0deg;
+            color: $forthColor;
+        }
+        &:hover #cml10{
+            rotate: 0deg;
+            color: $forthColor;
+        }
+    }
+}
+
+.contact-me-drop{
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 50%; 
+    form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+        input{
+            border: 3px solid  $secondaryColor;
+            background-color: $forthColor;
+            height: 35px;
+        }
+        textarea{
+            border: 3px solid  $secondaryColor;
+            background-color: $forthColor;
+        }
+    }
+}
+
+.contact-me-text:hover .contact-me-drop{
+    display: block;
+}
+
+
+
+
+@media screen and (max-width:576px) {
+    .navigation{
+        height: 70px;
+    }    
+    nav{
+        flex-direction: column;
+    }
+    .entrence-header{
+        text-align: center;
+    }
+    .p-name{
+        flex-direction: column;
+    }
+    .name-part p{
+        font-size: 3.5rem;
+    }
+    .about-me .about-me-text h3{
+        display: none;
+    }
+    .contact-me-drop{
+        width: 100%;
+    }
+    .about-me-list{
+        flex-direction: column;
+    }
+}
